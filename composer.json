@@ -1,0 +1,22 @@
+{
+    "name": "rgen3/php-postgres-procedure-builder",
+    "description": "Sql builder for stored procedures for postgresql",
+    "type": "library",
+    "require-dev": {
+        "phpunit/phpunit": "^7.2@dev",
+        "larapack/dd": "1.*"
+    },
+    "license": "GPL",
+    "authors": [
+        {
+            "name": "Alexander Tanaev",
+            "email": "rgen3@mail.ru"
+        }
+    ],
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-4": {
+            "Rgen3\\": "src/"
+        }
+    }
+}
