@@ -20,6 +20,10 @@ class VarcharArray extends AbstractSimpleArrayValue
      */
     protected function getPreparedValue(): ?array
     {
-        return array_map(function($item) {return addslashes($item);}, $this->value);
+        return array_map(
+            function($item) {
+                return "'" . str_replace("'", "''", $item) . "'";
+            },
+            $this->value);
     }
 }

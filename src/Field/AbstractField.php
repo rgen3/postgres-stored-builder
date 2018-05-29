@@ -22,7 +22,7 @@ abstract class AbstractField implements FieldInterface
     public function toString(): string
     {
         return sprintf(
-            '%s = %s%s',
+            '%s := %s%s',
             $this->getFieldName(),
             $this->getValue(),
             $this->getType()

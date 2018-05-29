@@ -22,7 +22,7 @@ class TextArray extends AbstractSimpleArrayValue
     {
         return array_map(
             function($item): string {
-                return addslashes($item);
+                return "'" . str_replace("'", "''", $item) . "'";
             },
             $this->value
         );

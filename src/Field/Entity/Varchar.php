@@ -28,6 +28,6 @@ class Varchar extends AbstractSimpleValue
      */
     public function getFieldValue(): ?string
     {
-        return addslashes($this->value);
+        return "'" . str_replace("'", "''", $this->value) . "'";
     }
 }

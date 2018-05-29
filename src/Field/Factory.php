@@ -7,6 +7,7 @@ use Rgen3\Exception\InvalidFieldType;
 use Rgen3\Field\Entity\Integer;
 use Rgen3\Field\Entity\IntegerArray;
 use Rgen3\Field\Entity\Text;
+use Rgen3\Field\Entity\Varchar;
 use Rgen3\StringHelper;
 
 class Factory
@@ -15,6 +16,7 @@ class Factory
     public const INTEGER_ARRAY = IntegerArray::class;
     public const TEXT = Text::class;
     public const TEXT_ARRAY = TextArray::class;
+    public const VARCHAR = Varchar::class;
 
     /**
      * @param $field
@@ -31,6 +33,10 @@ class Factory
                 'integer[]' => self::INTEGER_ARRAY,
                 'text' => self::TEXT,
             ][$field] ?? null;
+
+        if (strpos($field, 'varchar') === 0) {
+            $fieldName = self::VARCHAR;
+        }
 
         if (is_null($fieldName)) {
             throw new InvalidFieldType();

@@ -19,7 +19,7 @@ abstract class AbstractSimpleValue extends AbstractField
      * @param bool $nullable
      * @throws FieldNotNullable
      */
-    public function __construct(string $name, ?int $value, bool $nullable = false)
+    public function __construct(string $name, $value, bool $nullable = false)
     {
         if (!$nullable && is_null($value)) {
             throw new FieldNotNullable();

@@ -35,11 +35,10 @@ class QueryBuilder
             function($field)
             {
                 $field = explode(':', $field);
-                if(count($field) == 1) {
-                    $field[0] = StringHelper::toCamel($field[0]);
-                }
+                $fieldName = StringHelper::toSnake($field[0]);
+                $fieldAlias = $field[1] ?? $field[0];
 
-                return implode(' as ', $field);
+                return $fieldName . ' as ' . $fieldAlias;
             },
             $fields
         );
